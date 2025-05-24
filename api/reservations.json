@@ -11,7 +11,7 @@
     "email": "karolina@seznam.cz",
     "tel": "608608608",
     "price": 95000,
-    "status": "new"
+    "status": "confirmed"
   },
   {
     "id": 1,
@@ -25,6 +25,6 @@
     "email": "eva@hello.com",
     "tel": "5645454545",
     "price": 18400,
-    "status": "new"
+    "status": "confirmed"
   }
 ]
