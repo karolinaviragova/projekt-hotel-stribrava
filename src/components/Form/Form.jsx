@@ -141,7 +141,7 @@ export const Form = ({ roomPrice }) => {
         type="tel"
       />
 
-      <p>{isNaN(finalPrice) ? `Celková cena objednávky ${roomPrice} Kč` : `Celková cena objednávky ${finalPrice} Kč`}</p>
+      <p>{`Celková cena objednávky ${finalPrice || roomPrice} Kč`}</p>
 
       <button className="wide">Odeslat objednávku!</button>
     </form>
