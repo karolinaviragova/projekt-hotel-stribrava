@@ -8,7 +8,6 @@ export const Rooms = () => {
       <RoomList />
       <section class="light">
         <div class="container">
-          <h2>Heading</h2>
           <div class="columns-2">
             <RoomDetail />
             <Form />
