@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 export const Form = ({ roomPrice }) => {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
-  const [guests, setGuests] = useState('');
+  const [guests, setGuests] = useState(1);
   const [meals, setMeals] = useState('');
   const [pet, setPet] = useState(false);
   const [child, setChild] = useState(false);
@@ -15,6 +15,7 @@ export const Form = ({ roomPrice }) => {
   const date1 = dayjs(endDate);
   const date2 = dayjs(startDate);
   const numberOfDays = date1.diff(date2, 'day');
+  console.log(numberOfDays)
 
   let finalPrice = roomPrice * numberOfDays * guests
   if (pet) {
@@ -140,7 +141,7 @@ export const Form = ({ roomPrice }) => {
         type="tel"
       />
 
-      <p>Celková cena objednávky {finalPrice} Kč</p>
+      <p>{isNaN(finalPrice) ? `Celková cena objednávky ${roomPrice} Kč` : `Celková cena objednávky ${finalPrice} Kč`}</p>
 
       <button className="wide">Odeslat objednávku!</button>
     </form>
