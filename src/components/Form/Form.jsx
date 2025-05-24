@@ -34,8 +34,31 @@ export const Form = ({ roomPrice }) => {
     finalPrice += 500 * numberOfDays * guests
   }
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    fetch('http://localhost:4000/api/reservations', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        start: startDate,
+        end: endDate,
+        guests: guests,
+        meals: meals,
+        pet: pet,
+        child: child,
+        accessible: accessible,
+        email: email,
+        tel: tel,
+        price: finalPrice,
+        status: 'new',
+      }),
+    });
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="form-fields">
         <label htmlFor="field1" className="field-label">
           Od:
@@ -148,11 +171,3 @@ export const Form = ({ roomPrice }) => {
   );
 };
 
-/* 
-
-cena za pokoj za noc × počet nocí × počet osob,
-cena za snídani 150 /polopenzi 300 /plnou penzi 500 × počet osob × počet dní,
-za přistýlku pro dítě se počítá polovina celkové ceny za pokoj,
-za domácího mazlíčka se počítá čtvrtina celkové ceny za pokoj.
-
-*/
