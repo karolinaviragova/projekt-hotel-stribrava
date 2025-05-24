@@ -1,7 +1,6 @@
 import { Header } from '../../components/Header/Header';
-
-import './style.css';
 import { Footer } from '../../components/Footer/footer';
+import './style.css';
 
 export const HomePage = () => {
   return (
