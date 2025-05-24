@@ -140,7 +140,7 @@ export const Form = ({ roomPrice }) => {
         type="tel"
       />
 
-      <p>Celková cena objednávky {finalPrice}</p>
+      <p>Celková cena objednávky {finalPrice} Kč</p>
 
       <button className="wide">Odeslat objednávku!</button>
     </form>
