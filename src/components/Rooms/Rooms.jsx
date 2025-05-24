@@ -19,7 +19,7 @@ export const Rooms = () => {
 
   return (
     <div>
-      <RoomList />
+      <RoomList roomData={rooms} />
       <section className="light">
         <div className="container">
           <div className="columns-2">
