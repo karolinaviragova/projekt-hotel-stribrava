@@ -31,7 +31,7 @@ export const Rooms = () => {
         <div className="container">
           <div className="columns-2">
             {room && <RoomDetail selectedRoom={room} />}
-            <Form />
+            {room && <Form roomPrice={room.price}/>}
           </div>
         </div>
       </section>
