@@ -1,6 +1,6 @@
 export const RoomDetail = () => {
   return (
-    <div class="column">
+    <div className="column">
       <h2>Heading</h2>
 
       <img src="img/image1.svg" />
