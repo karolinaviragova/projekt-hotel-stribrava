@@ -26,5 +26,19 @@
     "tel": "5645454545",
     "price": 18400,
     "status": "confirmed"
+  },
+  {
+    "id": 2,
+    "start": "",
+    "end": "",
+    "guests": 1,
+    "meals": "",
+    "pet": false,
+    "child": false,
+    "accessible": false,
+    "email": "",
+    "tel": "",
+    "price": null,
+    "status": "new"
   }
 ]

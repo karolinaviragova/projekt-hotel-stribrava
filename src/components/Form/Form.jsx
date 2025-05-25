@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import dayjs from 'dayjs';
+import { useNavigate } from "react-router";
+
 
 export const Form = ({ roomPrice }) => {
   const [startDate, setStartDate] = useState('');
@@ -15,7 +17,8 @@ export const Form = ({ roomPrice }) => {
   const date1 = dayjs(endDate);
   const date2 = dayjs(startDate);
   const numberOfDays = date1.diff(date2, 'day');
-  console.log(numberOfDays)
+
+  const navigate = useNavigate();
 
   let finalPrice = roomPrice * numberOfDays * guests
   if (pet) {
@@ -166,7 +169,7 @@ export const Form = ({ roomPrice }) => {
 
       <p>{`Celková cena objednávky ${finalPrice || roomPrice} Kč`}</p>
 
-      <button className="wide">Odeslat objednávku!</button>
+      <button onClick={()=> navigate('/confirmation')} className="wide">Odeslat objednávku!</button>
     </form>
   );
 };
