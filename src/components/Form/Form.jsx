@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import dayjs from 'dayjs';
-import { useNavigate } from "react-router";
-
+import { useNavigate } from 'react-router';
 
 export const Form = ({ roomPrice }) => {
   const [startDate, setStartDate] = useState('');
@@ -20,21 +19,21 @@ export const Form = ({ roomPrice }) => {
 
   const navigate = useNavigate();
 
-  let finalPrice = roomPrice * numberOfDays * guests
+  let finalPrice = roomPrice * numberOfDays * guests;
   if (pet) {
-    finalPrice += roomPrice * 0.25 * numberOfDays
+    finalPrice += roomPrice * 0.25 * numberOfDays;
   }
   if (child) {
-    finalPrice += roomPrice * 0.5 * numberOfDays
+    finalPrice += roomPrice * 0.5 * numberOfDays;
   }
   if (meals === 'breakfast') {
-    finalPrice += 150 * numberOfDays * guests
+    finalPrice += 150 * numberOfDays * guests;
   }
   if (meals === 'half') {
-    finalPrice += 300 * numberOfDays * guests
+    finalPrice += 300 * numberOfDays * guests;
   }
   if (meals === 'full') {
-    finalPrice += 500 * numberOfDays * guests
+    finalPrice += 500 * numberOfDays * guests;
   }
 
   const handleSubmit = (event) => {
@@ -58,7 +57,7 @@ export const Form = ({ roomPrice }) => {
         status: 'new',
       }),
     });
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -106,9 +105,9 @@ export const Form = ({ roomPrice }) => {
           className="field-input"
         >
           <option>Žádné</option>
-          <option value='breakfast'>Snídaně</option>
-          <option value='half'>Polopenze</option>
-          <option value='full'>Plná penze</option>
+          <option value="breakfast">Snídaně</option>
+          <option value="half">Polopenze</option>
+          <option value="full">Plná penze</option>
         </select>
 
         <label htmlFor="check1" className="field-label">
@@ -169,8 +168,16 @@ export const Form = ({ roomPrice }) => {
 
       <p>{`Celková cena objednávky ${finalPrice || roomPrice} Kč`}</p>
 
-      <button onClick={()=> navigate('/confirmation')} className="wide">Odeslat objednávku!</button>
+      <button
+        onClick={() => {
+          if (startDate && endDate && email && tel) {
+            navigate('/confirmation');
+          }
+        }}
+        className="wide"
+      >
+        Odeslat objednávku!
+      </button>
     </form>
   );
 };
-
